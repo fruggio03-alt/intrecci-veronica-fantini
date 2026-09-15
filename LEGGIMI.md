@@ -1,27 +1,36 @@
-# Intrecci di Veronica Fantini — Sito vetrina statico
+# Intrecci — Veronica Fantini · sito vetrina
 
-Questa cartella contiene la versione "statica" del sito (HTML, CSS, JS, immagini e video),
-pronta per essere pubblicata gratis su **GitHub Pages**.
+Sito statico: un solo file (`index.html`) più la cartella `assets/`.
+Niente database, niente carrello. Si pubblica così com'è su GitHub Pages.
 
-## Come pubblicarlo su GitHub (gratis)
+```
+index.html                 il sito
+anteprima-con-video.html   copia con il video dentro, solo per guardarlo
+assets/hero.mp4            il video della hero
+assets/hero-poster.jpg     fermo immagine prima che parta il video
+assets/borse/              (per ora vuota, vedi sotto)
+```
 
-1. Vai su https://github.com e crea un account gratuito (se non ce l'hai già).
-2. Crea un nuovo repository (es. `intrecci-veronica-fantini`), pubblico.
-3. Carica **tutto il contenuto di questa cartella** dentro il repository, mantenendo
-   la struttura delle cartelle così com'è (non spostare o rinominare `index.html`,
-   `wp-content` e `wp-includes`).
-4. Vai su **Settings → Pages** del repository, e in "Branch" seleziona `main` (o `master`)
-   e cartella `/ (root)`, poi salva.
-5. Dopo qualche minuto il sito sarà online all'indirizzo:
-   `https://<tuo-username>.github.io/<nome-repository>/`
+## Il catalogo
 
-## Note
+Nomi, descrizioni e prezzi delle dodici borse arrivano dal modulo ordini
+JotForm. Si modificano tutti in fondo a `index.html`, nel blocco che
+inizia con `const BORSE = [`.
 
-- Il sito è completamente gratuito e non richiede alcun dominio a pagamento.
-- Le uniche risorse esterne rimaste sono i Google Fonts (gratuiti e sempre disponibili)
-  e il link a Instagram.
-- Alcuni link "tecnici" del vecchio WordPress (feed RSS, wp-json, xmlrpc) sono rimasti
-  puntati al sito originale ma non influenzano in alcun modo l'aspetto o il
-  funzionamento della pagina: sono invisibili ai visitatori.
-- Per modificare i testi in futuro basta aprire `index.html` con un editor di testo
-  (es. Blocco Note, VS Code) e cercare/modificare direttamente il testo desiderato.
+Le foto **non sono ancora nel sito**: vengono lette dai server di JotForm.
+Funziona, ma dipende da loro. Quando puoi, scarica le immagini, mettile in
+`assets/borse/` e sostituisci l'indirizzo lungo con `assets/borse/01.jpg`.
+Tieni ogni foto sotto i 300 KB.
+
+## Cosa manca ancora
+
+1. **Il logo** → `assets/logo.png`, meglio se PNG con sfondo trasparente,
+   largo circa 1200 px. Finché non c'è, il sito disegna una versione
+   scritta del marchio: somiglia, ma non è il logo vero.
+2. **Le foto della collezione Industrial-Pop**, quando è pronta.
+
+## Pubblicare su GitHub Pages
+
+Trascina l'intera cartella nella finestra di upload del repo
+`fruggio03-alt/intrecci-veronica-fantini`: `index.html` e `assets/`
+devono restare allo stesso livello, altrimenti il video non si vede.
